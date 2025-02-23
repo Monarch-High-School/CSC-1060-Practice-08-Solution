@@ -20,19 +20,21 @@ public class StringComparator {
      * @param b - the second String
      */
     public StringComparator(String a, String b) {
-        
+            // add items to the list if they aren't already there and sort
         string1List = new ArrayList<String>();
-        for (String s : a.toLowerCase().split(" ")) 
-            string1List.add(s);
-
-        Collections.sort(string1List);
-
+            // process if greater than 0
+        if (a.length() > 0) {
+            for (String s : a.toLowerCase().split(" "))  {
+                addToList(string1List, s);
+            }
+        }
         string2List = new ArrayList<String>();
-        for (String s : b.toLowerCase().split(" ")) 
-            string2List.add(s); 
-        
-        Collections.sort(string2List);
-
+            // process if greater than 0
+        if (b.length() > 2) {
+            for (String s : b.toLowerCase().split(" ")) {
+                addToList(string2List, s);
+            }
+        }
             // sort out the unique and common items
         determineCommonUnique();
     }
@@ -71,33 +73,38 @@ public class StringComparator {
     private void determineCommonUnique() {
         common = new ArrayList<String>();
         unique = new ArrayList<String>();
-                
-            // loop through all the items in string1List
-        for (String s : string1List) {
-                // if they are found in string2List
-            if (search(string2List, s)) {
-                common.add(s);
-                Collections.sort(common);
+            // loop through string1, and if items are in list2, add them to common    
+        for (String w : string1List) {
+            if (search(string2List, w)) {
+                addToList(common, w);
             }
-                // otherwise add to the unique list
             else {
-                unique.add(s);
-                Collections.sort(unique);
+                addToList(unique, w);
             }
         }
-                // loop through all the items in string2List
-        for (String s : string2List) {
-                // if they are found in string2List
-            if (search(string1List, s)) {
-                common.add(s);
-                Collections.sort(common);
+        // loop through string2, and if items are in list1, add them to common    
+        for (String w : string2List) {
+            if (search(string1List, w)) {
+                addToList(common, w);
             }
-                // otherwise add to the unique list
             else {
-                unique.add(s);
-                Collections.sort(unique);
+                addToList(unique, w);
             }
         }        
+    }
+
+    /**
+     * Adds word to an ArrayList<Strings> if and only if it is not already in the list.
+     * Sorts the list after an addition. 
+     * Requires the list to be sorted and search binary search helper method
+     * @param al The ArrayList<String> to add to. 
+     * @param w The word to add
+     */
+    private void addToList(ArrayList<String> al, String w) {
+        if (! search(al, w)) {
+            al.add(w);
+            Collections.sort(al);
+        }
     }
 
     /**
