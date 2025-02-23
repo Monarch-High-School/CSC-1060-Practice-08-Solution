@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: testGetString1List_CommonWords
         setup-command: ''
-        command: gradle test --tests testGetString1List_CommonWords
+        command: gradle test --tests StringComparatorTest.testGetString1List_CommonWords
         timeout: 1
         max-score: 1
     - name: testGetString2List_CommonWords
@@ -28,7 +28,7 @@ jobs:
       with:
         test-name: testGetString2List_CommonWords
         setup-command: ''
-        command: gradle test --tests testGetString2List_CommonWords
+        command: gradle test --tests StringComparatorTest.testGetString2List_CommonWords
         timeout: 1
         max-score: 1
     - name: testGetCommon_CommonWords
@@ -37,7 +37,7 @@ jobs:
       with:
         test-name: testGetCommon_CommonWords
         setup-command: ''
-        command: gradle test --tests testGetCommon_CommonWords
+        command: gradle test --tests StringComparatorTest.testGetCommon_CommonWords
         timeout: 1
         max-score: 1
     - name: testGetUnique_CommonWords
@@ -46,7 +46,7 @@ jobs:
       with:
         test-name: testGetUnique_CommonWords
         setup-command: ''
-        command: gradle test --tests testGetUnique_CommonWords
+        command: gradle test --tests StringComparatorTest.testGetUnique_CommonWords
         timeout: 1
         max-score: 1
     - name: testGetSimilarityRatio_CommonWords
@@ -55,7 +55,7 @@ jobs:
       with:
         test-name: testGetSimilarityRatio_CommonWords
         setup-command: ''
-        command: gradle test --tests testGetSimilarityRatio_CommonWords
+        command: gradle test --tests StringComparatorTest.testGetSimilarityRatio_CommonWords
         timeout: 1
         max-score: 1
     - name: testGetString1List_EmptySentences
@@ -64,7 +64,7 @@ jobs:
       with:
         test-name: testGetString1List_EmptySentences
         setup-command: ''
-        command: gradle test --tests testGetString1List_EmptySentences
+        command: gradle test --tests StringComparatorTest.testGetString1List_EmptySentences
         timeout: 1
         max-score: 1
     - name: testGetString2List_EmptySentences
@@ -73,7 +73,7 @@ jobs:
       with:
         test-name: testGetString2List_EmptySentences
         setup-command: ''
-        command: gradle test --tests testGetString2List_EmptySentences
+        command: gradle test --tests StringComparatorTest.testGetString2List_EmptySentences
         timeout: 1
         max-score: 1
     - name: testGetCommon_EmptySentences
@@ -82,7 +82,7 @@ jobs:
       with:
         test-name: testGetCommon_EmptySentences
         setup-command: ''
-        command: gradle test --tests testGetCommon_EmptySentences
+        command: gradle test --tests StringComparatorTest.testGetCommon_EmptySentences
         timeout: 1
         max-score: 1
     - name: testGetUnique_EmptySentences
@@ -91,7 +91,7 @@ jobs:
       with:
         test-name: testGetUnique_EmptySentences
         setup-command: ''
-        command: gradle test --tests testGetUnique_EmptySentences
+        command: gradle test --tests StringComparatorTest.testGetUnique_EmptySentences
         timeout: 1
         max-score: 1
     - name: testGetSimilarityRatio_EmptySentences
@@ -100,7 +100,7 @@ jobs:
       with:
         test-name: testGetSimilarityRatio_EmptySentences
         setup-command: ''
-        command: gradle test --tests testGetSimilarityRatio_EmptySentences
+        command: gradle test --tests StringComparatorTest.testGetSimilarityRatio_EmptySentences
         timeout: 1
         max-score: 1
     - name: testGetString1List_CaseInsensitive
@@ -109,7 +109,7 @@ jobs:
       with:
         test-name: testGetString1List_CaseInsensitive
         setup-command: ''
-        command: gradle test --tests testGetString1List_CaseInsensitive
+        command: gradle test --tests StringComparatorTest.testGetString1List_CaseInsensitive
         timeout: 1
         max-score: 1
     - name: testGetString2List_CaseInsensitive
@@ -118,7 +118,7 @@ jobs:
       with:
         test-name: testGetString2List_CaseInsensitive
         setup-command: ''
-        command: gradle test --tests testGetString2List_CaseInsensitive
+        command: gradle test --tests StringComparatorTest.testGetString2List_CaseInsensitive
         timeout: 1
         max-score: 1
     - name: testGetCommon_CaseInsensitive
@@ -127,7 +127,7 @@ jobs:
       with:
         test-name: testGetCommon_CaseInsensitive
         setup-command: ''
-        command: gradle test --tests testGetCommon_CaseInsensitive
+        command: gradle test --tests StringComparatorTest.testGetCommon_CaseInsensitive
         timeout: 1
         max-score: 1
     - name: testGetUnique_CaseInsensitive
@@ -136,7 +136,7 @@ jobs:
       with:
         test-name: testGetUnique_CaseInsensitive
         setup-command: ''
-        command: gradle test --tests testGetUnique_CaseInsensitive
+        command: gradle test --tests StringComparatorTest.testGetUnique_CaseInsensitive
         timeout: 1
         max-score: 1
     - name: testGetSimilarityRatio_CaseInsensitive
@@ -145,7 +145,7 @@ jobs:
       with:
         test-name: testGetSimilarityRatio_CaseInsensitive
         setup-command: ''
-        command: gradle test --tests testGetSimilarityRatio_CaseInsensitive
+        command: gradle test --tests StringComparatorTest.testGetSimilarityRatio_CaseInsensitive
         timeout: 1
         max-score: 1
     - name: testGetString1List_ScrambledWords
@@ -154,7 +154,7 @@ jobs:
       with:
         test-name: testGetString1List_ScrambledWords
         setup-command: ''
-        command: gradle test --tests testGetString1List_ScrambledWords
+        command: gradle test --tests StringComparatorTest.testGetString1List_ScrambledWords
         timeout: 1
         max-score: 1
     - name: testGetString2List_ScrambledWords
@@ -163,7 +163,7 @@ jobs:
       with:
         test-name: testGetString2List_ScrambledWords
         setup-command: ''
-        command: gradle test --tests testGetString2List_ScrambledWords
+        command: gradle test --tests StringComparatorTest.testGetString2List_ScrambledWords
         timeout: 1
         max-score: 1
     - name: testGetCommon_ScrambledWords
@@ -172,7 +172,7 @@ jobs:
       with:
         test-name: testGetCommon_ScrambledWords
         setup-command: ''
-        command: gradle test --tests testGetCommon_ScrambledWords
+        command: gradle test --tests StringComparatorTest.testGetCommon_ScrambledWords
         timeout: 1
         max-score: 1
     - name: testGetUnique_ScrambledWords
@@ -181,7 +181,7 @@ jobs:
       with:
         test-name: testGetUnique_ScrambledWords
         setup-command: ''
-        command: gradle test --tests testGetUnique_ScrambledWords
+        command: gradle test --tests StringComparatorTest.testGetUnique_ScrambledWords
         timeout: 1
         max-score: 1
     - name: testGetSimilarityRatio_ScrambledWords
@@ -190,7 +190,7 @@ jobs:
       with:
         test-name: testGetSimilarityRatio_ScrambledWords
         setup-command: ''
-        command: gradle test --tests testGetSimilarityRatio_ScrambledWords
+        command: gradle test --tests StringComparatorTest.testGetSimilarityRatio_ScrambledWords
         timeout: 1
         max-score: 1
     - name: Autograding Reporter
