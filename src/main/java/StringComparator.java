@@ -8,7 +8,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class StringComparatorSol {
+public class StringComparator {
     private ArrayList<String> string1List;
     private ArrayList<String> string2List;
     private ArrayList<String> common;
@@ -19,7 +19,7 @@ public class StringComparatorSol {
      * @param a - the first String
      * @param b - the second String
      */
-    public StringComparatorSol(String a, String b) {
+    public StringComparator(String a, String b) {
         
         string1List = new ArrayList<String>();
         for (String s : a.toLowerCase().split(" ")) 
