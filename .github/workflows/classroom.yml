@@ -1,0 +1,220 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: testGetString1List_CommonWords
+      id: testgetstring1list_commonwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString1List_CommonWords
+        setup-command: ''
+        command: gradle test --tests testGetString1List_CommonWords
+        timeout: 1
+        max-score: 1
+    - name: testGetString2List_CommonWords
+      id: testgetstring2list_commonwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString2List_CommonWords
+        setup-command: ''
+        command: gradle test --tests testGetString2List_CommonWords
+        timeout: 1
+        max-score: 1
+    - name: testGetCommon_CommonWords
+      id: testgetcommon_commonwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetCommon_CommonWords
+        setup-command: ''
+        command: gradle test --tests testGetCommon_CommonWords
+        timeout: 1
+        max-score: 1
+    - name: testGetUnique_CommonWords
+      id: testgetunique_commonwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetUnique_CommonWords
+        setup-command: ''
+        command: gradle test --tests testGetUnique_CommonWords
+        timeout: 1
+        max-score: 1
+    - name: testGetSimilarityRatio_CommonWords
+      id: testgetsimilarityratio_commonwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetSimilarityRatio_CommonWords
+        setup-command: ''
+        command: gradle test --tests testGetSimilarityRatio_CommonWords
+        timeout: 1
+        max-score: 1
+    - name: testGetString1List_EmptySentences
+      id: testgetstring1list_emptysentences
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString1List_EmptySentences
+        setup-command: ''
+        command: gradle test --tests testGetString1List_EmptySentences
+        timeout: 1
+        max-score: 1
+    - name: testGetString2List_EmptySentences
+      id: testgetstring2list_emptysentences
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString2List_EmptySentences
+        setup-command: ''
+        command: gradle test --tests testGetString2List_EmptySentences
+        timeout: 1
+        max-score: 1
+    - name: testGetCommon_EmptySentences
+      id: testgetcommon_emptysentences
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetCommon_EmptySentences
+        setup-command: ''
+        command: gradle test --tests testGetCommon_EmptySentences
+        timeout: 1
+        max-score: 1
+    - name: testGetUnique_EmptySentences
+      id: testgetunique_emptysentences
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetUnique_EmptySentences
+        setup-command: ''
+        command: gradle test --tests testGetUnique_EmptySentences
+        timeout: 1
+        max-score: 1
+    - name: testGetSimilarityRatio_EmptySentences
+      id: testgetsimilarityratio_emptysentences
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetSimilarityRatio_EmptySentences
+        setup-command: ''
+        command: gradle test --tests testGetSimilarityRatio_EmptySentences
+        timeout: 1
+        max-score: 1
+    - name: testGetString1List_CaseInsensitive
+      id: testgetstring1list_caseinsensitive
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString1List_CaseInsensitive
+        setup-command: ''
+        command: gradle test --tests testGetString1List_CaseInsensitive
+        timeout: 1
+        max-score: 1
+    - name: testGetString2List_CaseInsensitive
+      id: testgetstring2list_caseinsensitive
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString2List_CaseInsensitive
+        setup-command: ''
+        command: gradle test --tests testGetString2List_CaseInsensitive
+        timeout: 1
+        max-score: 1
+    - name: testGetCommon_CaseInsensitive
+      id: testgetcommon_caseinsensitive
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetCommon_CaseInsensitive
+        setup-command: ''
+        command: gradle test --tests testGetCommon_CaseInsensitive
+        timeout: 1
+        max-score: 1
+    - name: testGetUnique_CaseInsensitive
+      id: testgetunique_caseinsensitive
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetUnique_CaseInsensitive
+        setup-command: ''
+        command: gradle test --tests testGetUnique_CaseInsensitive
+        timeout: 1
+        max-score: 1
+    - name: testGetSimilarityRatio_CaseInsensitive
+      id: testgetsimilarityratio_caseinsensitive
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetSimilarityRatio_CaseInsensitive
+        setup-command: ''
+        command: gradle test --tests testGetSimilarityRatio_CaseInsensitive
+        timeout: 1
+        max-score: 1
+    - name: testGetString1List_ScrambledWords
+      id: testgetstring1list_scrambledwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString1List_ScrambledWords
+        setup-command: ''
+        command: gradle test --tests testGetString1List_ScrambledWords
+        timeout: 1
+        max-score: 1
+    - name: testGetString2List_ScrambledWords
+      id: testgetstring2list_scrambledwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetString2List_ScrambledWords
+        setup-command: ''
+        command: gradle test --tests testGetString2List_ScrambledWords
+        timeout: 1
+        max-score: 1
+    - name: testGetCommon_ScrambledWords
+      id: testgetcommon_scrambledwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetCommon_ScrambledWords
+        setup-command: ''
+        command: gradle test --tests testGetCommon_ScrambledWords
+        timeout: 1
+        max-score: 1
+    - name: testGetUnique_ScrambledWords
+      id: testgetunique_scrambledwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetUnique_ScrambledWords
+        setup-command: ''
+        command: gradle test --tests testGetUnique_ScrambledWords
+        timeout: 1
+        max-score: 1
+    - name: testGetSimilarityRatio_ScrambledWords
+      id: testgetsimilarityratio_scrambledwords
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetSimilarityRatio_ScrambledWords
+        setup-command: ''
+        command: gradle test --tests testGetSimilarityRatio_ScrambledWords
+        timeout: 1
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTGETSTRING1LIST_COMMONWORDS_RESULTS: "${{steps.testgetstring1list_commonwords.outputs.result}}"
+        TESTGETSTRING2LIST_COMMONWORDS_RESULTS: "${{steps.testgetstring2list_commonwords.outputs.result}}"
+        TESTGETCOMMON_COMMONWORDS_RESULTS: "${{steps.testgetcommon_commonwords.outputs.result}}"
+        TESTGETUNIQUE_COMMONWORDS_RESULTS: "${{steps.testgetunique_commonwords.outputs.result}}"
+        TESTGETSIMILARITYRATIO_COMMONWORDS_RESULTS: "${{steps.testgetsimilarityratio_commonwords.outputs.result}}"
+        TESTGETSTRING1LIST_EMPTYSENTENCES_RESULTS: "${{steps.testgetstring1list_emptysentences.outputs.result}}"
+        TESTGETSTRING2LIST_EMPTYSENTENCES_RESULTS: "${{steps.testgetstring2list_emptysentences.outputs.result}}"
+        TESTGETCOMMON_EMPTYSENTENCES_RESULTS: "${{steps.testgetcommon_emptysentences.outputs.result}}"
+        TESTGETUNIQUE_EMPTYSENTENCES_RESULTS: "${{steps.testgetunique_emptysentences.outputs.result}}"
+        TESTGETSIMILARITYRATIO_EMPTYSENTENCES_RESULTS: "${{steps.testgetsimilarityratio_emptysentences.outputs.result}}"
+        TESTGETSTRING1LIST_CASEINSENSITIVE_RESULTS: "${{steps.testgetstring1list_caseinsensitive.outputs.result}}"
+        TESTGETSTRING2LIST_CASEINSENSITIVE_RESULTS: "${{steps.testgetstring2list_caseinsensitive.outputs.result}}"
+        TESTGETCOMMON_CASEINSENSITIVE_RESULTS: "${{steps.testgetcommon_caseinsensitive.outputs.result}}"
+        TESTGETUNIQUE_CASEINSENSITIVE_RESULTS: "${{steps.testgetunique_caseinsensitive.outputs.result}}"
+        TESTGETSIMILARITYRATIO_CASEINSENSITIVE_RESULTS: "${{steps.testgetsimilarityratio_caseinsensitive.outputs.result}}"
+        TESTGETSTRING1LIST_SCRAMBLEDWORDS_RESULTS: "${{steps.testgetstring1list_scrambledwords.outputs.result}}"
+        TESTGETSTRING2LIST_SCRAMBLEDWORDS_RESULTS: "${{steps.testgetstring2list_scrambledwords.outputs.result}}"
+        TESTGETCOMMON_SCRAMBLEDWORDS_RESULTS: "${{steps.testgetcommon_scrambledwords.outputs.result}}"
+        TESTGETUNIQUE_SCRAMBLEDWORDS_RESULTS: "${{steps.testgetunique_scrambledwords.outputs.result}}"
+        TESTGETSIMILARITYRATIO_SCRAMBLEDWORDS_RESULTS: "${{steps.testgetsimilarityratio_scrambledwords.outputs.result}}"
+      with:
+        runners: testgetstring1list_commonwords,testgetstring2list_commonwords,testgetcommon_commonwords,testgetunique_commonwords,testgetsimilarityratio_commonwords,testgetstring1list_emptysentences,testgetstring2list_emptysentences,testgetcommon_emptysentences,testgetunique_emptysentences,testgetsimilarityratio_emptysentences,testgetstring1list_caseinsensitive,testgetstring2list_caseinsensitive,testgetcommon_caseinsensitive,testgetunique_caseinsensitive,testgetsimilarityratio_caseinsensitive,testgetstring1list_scrambledwords,testgetstring2list_scrambledwords,testgetcommon_scrambledwords,testgetunique_scrambledwords,testgetsimilarityratio_scrambledwords
