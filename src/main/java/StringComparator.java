@@ -20,21 +20,31 @@ public class StringComparator {
      * @param b - the second String
      */
     public StringComparator(String a, String b) {
-            // add items to the list if they aren't already there and sort
+            // add items to the list 
         string1List = new ArrayList<String>();
             // process if greater than 0
         if (a.length() > 0) {
+                // split on space and add to list
             for (String s : a.toLowerCase().split(" "))  {
-                addToList(string1List, s);
+                string1List.add(s);
             }
         }
+            // sort
+        Collections.sort(string1List);
+            // remove duplicates
+        removeDuplicates(string1List);
+
         string2List = new ArrayList<String>();
             // process if greater than 0
         if (b.length() > 2) {
             for (String s : b.toLowerCase().split(" ")) {
-                addToList(string2List, s);
+                string2List.add(s);
             }
         }
+            // sort
+        Collections.sort(string2List);
+        removeDuplicates(string2List);
+
             // sort out the unique and common items
         determineCommonUnique();
     }
@@ -76,34 +86,43 @@ public class StringComparator {
             // loop through string1, and if items are in list2, add them to common    
         for (String w : string1List) {
             if (search(string2List, w)) {
-                addToList(common, w);
+                common.add(w);
             }
             else {
-                addToList(unique, w);
+                unique.add(w);
             }
         }
         // loop through string2, and if items are in list1, add them to common    
         for (String w : string2List) {
             if (search(string1List, w)) {
-                addToList(common, w);
+                common.add(w);
             }
             else {
-                addToList(unique, w);
+                unique.add(w);
             }
         }        
+        Collections.sort(common);
+        Collections.sort(unique);
+        removeDuplicates(common);
+        removeDuplicates(unique);
     }
 
     /**
-     * Adds word to an ArrayList<Strings> if and only if it is not already in the list.
-     * Sorts the list after an addition. 
-     * Requires the list to be sorted and search binary search helper method
-     * @param al The ArrayList<String> to add to. 
-     * @param w The word to add
+     * Removes duplicates from a sorted list. Operates on the list in place
+     * @param list an ArrayList of Strings that is sorted
      */
-    private void addToList(ArrayList<String> al, String w) {
-        if (! search(al, w)) {
-            al.add(w);
-            Collections.sort(al);
+    private void removeDuplicates(ArrayList<String> list) {
+        int i = 0;
+            // loop to the end of the list
+        while (i < list.size() - 1) {
+                // if this item and the following one are equal
+                // remove the following item
+            if (list.get(i).equals(list.get(i+1))) {
+                list.remove(i+1);
+            }
+            else {
+                i++;
+            }
         }
     }
 
